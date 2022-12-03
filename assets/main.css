@@ -1,0 +1,204 @@
+body{
+    background-color: #F1F3EB;
+    animation: bg_color_switch 500ms infinite;
+    /* overflow: hidden; */
+}
+
+@keyframes bg_color_switch {
+    0% {background-color: #F1F3EB;}
+    50% {background-color: #B5F240;}
+    100% {background-color: #F1F3EB;}
+}
+
+/* part one (landing)  */
+#part-1{
+position: relative;
+height: 100vh;
+width: 100vw;
+margin: auto;
+}
+
+#coffin{
+    transition: ease-in-out;
+}
+
+#coffin:hover{
+    transform: scale(1.1);
+}
+
+#coffin{
+    position: relative;
+    height: 50vh;
+    padding-top: 20vh;
+    padding-left: 25vw;
+}
+
+/* part two (landing)  */
+#part-2{
+    background-color: #F1F3EB;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+}
+
+/* wordmark appearing */
+#wordmark-1{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    opacity: 0;
+    animation: showing-animation 300ms forwards ease-in-out, hiding-animation 1ms forwards 600ms;
+}
+
+#wordmark-2{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    opacity: 0;
+    animation: showing-animation 200ms forwards 200ms ease-in-out, hiding-animation 1ms forwards 600ms;
+}
+
+#wordmark-3{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    opacity: 0;
+    animation: showing-hiding-animation 400ms forwards 400ms ease;
+}
+
+#wordmark-4{
+    position: absolute;
+    left: 0%;
+    top: 25%;
+    opacity: 0;
+    animation: showing-animation 1s forwards 600ms ease-in-out;
+    z-index: 2;
+}
+
+#yellow-star-1{
+    position: absolute;
+    top: 10%;
+    opacity: 0;
+    animation: rotate 3s infinite alternate-reverse ease-in-out, showing-animation 300ms forwards ease-in-out, falling 600ms forwards 800ms ease;
+}
+
+#yellow-star-2{
+    position: absolute;
+    bottom: 10%;
+    right: 0;
+    opacity: 0;
+    animation: rotate 2s infinite alternate-reverse ease-in-out, showing-animation 300ms forwards 100ms ease-in-out, fallingshort 600ms forwards 800ms ease ;
+}
+
+#purple-star-1{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    opacity: 0%;
+    animation: pop 1s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 200ms ease-in-out, falling 600ms forwards 800ms ease;
+}
+
+#purple-star-2{
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    opacity: 0%;
+    animation: pop 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 300ms ease-in-out, fallingshort 600ms forwards 800ms ease;
+}
+
+#blue-star-1{
+    position: absolute;
+    bottom: 19%;
+    left: 50%;
+    opacity: 0;
+    animation: slide 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 400ms ease-in-out, fallingshort 600ms forwards 800ms ease;
+}
+
+#blue-star-2{
+    position: absolute;
+    bottom: 30%;
+    right: -10%;
+    opacity: 0;
+    animation: slide 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 600ms ease-in-out, fallingshort 600ms forwards 800ms ease;
+}
+
+/* letters falling */
+#h,#e, #s, #t-3, #coffin-1, #s-3, #i{
+    animation: fallingletters-1 600ms forwards 1.3s ease;
+}
+
+#t,#coffin-2, #s-2, #t-2, #l, #colon{
+    animation: fallingletters-2 600ms forwards 1.4s ease;
+}
+
+#e-2,#a, #e-3, #m, #coffin-3, #a-2, #e-4{
+    animation: fallingletters-1 600ms forwards 1.45s ease;
+}
+
+/* part 3 objects falling */
+
+
+/* animation for appearing wordmark */
+@keyframes showing-animation {
+    from{opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+@keyframes showing-hiding-animation {
+    0%{opacity: 0%;}
+    90%{opacity: 100%}
+    100%{opacity: 0%}
+}
+
+@keyframes hiding-animation {
+    from{opacity: 100%;}
+    to{opacity: 0%;}
+}
+
+/* star animations */
+@keyframes rotate {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+
+@keyframes pop {
+    from{transform: scale(1);}
+    to{transform: scale(1.7);}
+}
+
+@keyframes slide {
+    from{transform: skew(0);}
+    to{transform: skew(20deg);}
+}
+
+/* falling animation */
+@keyframes falling {
+    from{transform: translate(0%,0%);}
+    to{transform:translate(0%,70vh);}
+}
+
+@keyframes fallingshort {
+    from{transform: translate(0%,0%);}
+    to{transform:translate(0%,10vh);}
+}
+
+@keyframes fallingletters-1 {
+    0%{transform: translate(0%,0%);}
+    100%{transform: translate(0%,20%) rotate(1deg);}
+}
+@keyframes fallingletters-2 {
+    0%{transform: translate(0%,0%);}
+    100%{transform: translate(0%,20%) rotate(-1deg);}
+}
+
+
+/* display/hide */
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
