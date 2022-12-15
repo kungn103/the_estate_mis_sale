@@ -11,8 +11,10 @@
 body{
     background-color: #F1F3EB;
     color: #1a1a1a;
-    /* overflow: hidden; */
+    overflow: hidden;
     cursor: url('../assets/cursor.png'), auto;
+    height: 100vh;
+    width: 100vw;
 }
 
 a:hover{
@@ -23,6 +25,10 @@ a:hover{
 a{
   text-decoration: none;
   color: #1a1a1a;
+}
+
+h2{
+    font-family: neueMachina;
 }
 /* wordmark appears */
 #part-1{
@@ -110,9 +116,12 @@ a{
 
 /* MAIN SITE */
 #main-site {
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    height: 100vh;
+    width: 100vw;
     top: 0;
     left: 0;
     position: absolute;
@@ -129,6 +138,7 @@ a{
     width: 85vw;
     z-index: 4;
     height: 100vh;
+    overflow: hidden;
 }
 
 /* navigation */
@@ -151,12 +161,18 @@ a{
     display: none;
 }
 
+.cart:hover{
+    transform: scale(1.2);
+}
+
 #cart-box>h2{
     color: #bbe577;
     rotate: -19deg;
     position: absolute;
+    right: 5%;
+    top: 14%;
     font-size: 100%;
-    transform: translate(260%,-300%) skewX(20deg);
+    transform: skewX(20deg);
 }
 
 #menu{
@@ -191,151 +207,214 @@ a{
     transform: skew(30deg);
 }
 
+#help{
+    display: inline-flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
+#help > img{
+    height: 13vh;
+}
 
-
-
+#help > h2{
+    rotate: -20deg;
+}
 
 /* stars */
+.star{
+    z-index: -1;
+}
+
 #yellow-star-1{
     position: absolute;
     top: 10%;
+    animation: rotate 3s infinite alternate-reverse ease-in-out, showing-animation 300ms forwards ease-in-out, falling 600ms forwards 800ms ease;
+}
 
+#yellow-star-1 >path, #yellow-star-2>path {
+    animation: colorSwitch1 3s infinite ease-in-out alternate-reverse;
 }
 
 #yellow-star-2{
     position: absolute;
     bottom: 10%;
     right: 0;
+    animation: rotate 2s infinite alternate-reverse ease-in-out, showing-animation 300ms forwards 100ms ease-in-out, fallingshort 600ms forwards 800ms ease ;
+
 }
 
 #purple-star-1{
     position: absolute;
     top: 10%;
     right: 10%;
+    animation: pop 1s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 200ms ease-in-out, falling 600ms forwards 800ms ease;
+
 }
 
 #purple-star-2{
     position: absolute;
     bottom: 15%;
     left: 10%;
+    animation: pop 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 300ms ease-in-out, fallingshort 600ms forwards 800ms ease;
+}
+
+#purple-star-1>path, #purple-star-2>path {
+    animation: colorSwitch1 5s infinite ease-in-out alternate-reverse 800ms;
 }
 
 #blue-star-1{
     position: absolute;
     bottom: 19%;
     left: 50%;
+    animation: slide 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 400ms ease-in-out, fallingshort 600ms forwards 800ms ease;
 }
 
 #blue-star-2{
     position: absolute;
     bottom: 30%;
     right: -10%;
+    animation: slide 2s infinite alternate-reverse ease-in-out, showing-animation 200ms forwards 600ms ease-in-out, fallingshort 600ms forwards 800ms ease;
 }
 
-/* objects*/
+#blue-star-1>path, #blue-star-2>path {
+    animation: colorSwitch1 7s infinite ease-in-out alternate-reverse 1s;
+}
+
+/* objects */
+#objects{
+    max-height: 100vh;
+    max-width: 85vw;
+    overflow: hidden;
+    overflow:-moz-hidden-unscrollable;
+}
+
 #site-content>img{
     min-height: 10vh;
     max-height: 90vh;
 }
 
-#object-0{
-    display: none;
+#site-content>img:hover{
+    transform: scale(1.1);
 }
 
+
 #object-1{
+    position: absolute;
     height: 40vh;
+    top: 5%;
 }
 
 #object-15{
+    position: absolute;
     height: 25vh;
+    top: 1%;
+    left: 30%;
 }
 
-
 #object-28{
+    position: absolute;
     height: 40vh;
+    bottom: -5%;
+    rotate: -30deg;
 }
 
 #object-75{
+    position: absolute;
     height: 50vh;
+    right:2%;
+    top: 50%;
+    rotate: 10deg;
 }
 
 #object-76{
+    position: absolute;
     height: 40vh;
+    left: 40%;
+    bottom: 1%;
 }
 
 #object-89 {
+    position: absolute;
     height: 30vh;
-
-}
-
-#object-91 {
-    height: 30vh;
-
+    right: 22%;
+    top: 40%;
+    rotate: -20deg;
 }
 
 #object-106 {
+    position: absolute;
     height: 40vh;
+    top: 32%;
+    rotate: 20deg;
 }
 
 #object-111 {
+    position: absolute;
     height: 50vh;
+    rotate: -30deg;
+    top: 18%;
+    left: 18%;
 }
 
 #object-134 {
+    position: absolute;
+    top: 18%;
     height: 25vh;
+    right: 15%;
+    rotate: 30deg;
 }
 
 #object-152 {
+    position: absolute;
     height: 25vh;
-}
-
-#object-171 {
-    height: 70vh;
-}
-
-#object-127 {
-    height: 53vh;
+    top: 10%;
+    right: 30%;
 }
 
 #object-193 {
+    position: absolute;
     height: 25vh;
-}
-
-#object-200 {
-    height: 18vh;
-}
-
-#object-203 {
-    height: 10vh;
+    top: 17%;
+    left: 40%;
+    rotate: 40deg;
 }
 
 #object-237 {
+    position: absolute;
     height: 15vh;
+    top: 30%;
+    right: 5%;
+    rotate: -30deg;
 }
 
 #object-250 {
+    position: absolute;
     height: 25vh;
+    rotate: -30deg;
+    bottom: 10%;
+    right: 30%;
 }
 
 #object-270 {
+    position: absolute;
     height: 30vh;
+    top: 30%;
+    right: 37%;
 }
 
 #object-326 {
+    position: absolute;
     height: 50vh;
-
+    rotate: -35deg;
+    bottom: -9%;
+    left: 18%;
 }
-
-
-
-
-
-
 
 /* star animations */
 @keyframes rotate {
-    from{transform: rotate(0deg);}
+    from{transform: rotate(0deg); fill: blue;}
     to{transform: rotate(360deg);}
 }
 @keyframes pop {
@@ -347,6 +426,13 @@ a{
     to{transform: skew(20deg);}
 }
 
+@keyframes colorSwitch1 {
+    25%{fill: #F2F244;}
+    50%{fill: #B5F240;}
+    75%{fill: #0C6596;}
+    100%{fill: #8A69ED;}
+}
+
 /* display/hide */
 .hide{
     display: none;
@@ -354,4 +440,9 @@ a{
 
 .show{
     display: block;
+}
+
+/* add to cart */
+.in-cart{
+    transform: scale(0.1) rotate(0deg);
 }

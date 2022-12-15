@@ -1,0 +1,65 @@
+@font-face {
+    font-family: neueMachina;
+    src: url(../assets/typefaces/PPNeueMachina-Regular.woff);
+}
+
+@font-face {
+    font-family: neueMachinaUL;
+    src: url(../assets/typefaces/PPNeueMachina-Ultralight.woff);
+}
+
+body{
+    background-color: #F1F3EB;
+    color: #1a1a1a;
+    overflow: hidden;
+    cursor: url('../assets/cursor.png'), auto;
+}
+
+a:hover{
+    transform: scale(1.2);
+    cursor: url('../assets/cursor.png'), auto;
+}
+
+a{
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+#cart-box{
+    font-family: ocr-a-std,monospace;
+    font-weight: 400;
+    font-style: normal;
+    height: 70vh;
+}
+
+#cart-box>img{
+    height: 80vh;
+    margin-left: 30%;
+    margin-top: 7%;
+}
+
+.cart, .checkout{
+    display: none;
+}
+
+#cart-box>h2{
+    color: #bbe577;
+    rotate: -19deg;
+    position: absolute;
+    font-size: 300%;
+    transform: translate(560%,-20%) skewX(20deg);
+}
+
+#back{
+    height: 10vh;
+}
+
+#back:hover{
+   transform: scale(1.2);
+}
+
+#checkout{
+    position: absolute;
+    right: 0%;
+    bottom: -10%;
+}
